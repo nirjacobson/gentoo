@@ -127,4 +127,5 @@ src_test() {
 
 src_install() {
 	cmake_src_install
+	install ${FILESDIR}/lxqt-applications.menu /etc/xdg/menus/lxqt-applications.menu
 }
