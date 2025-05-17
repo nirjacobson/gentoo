@@ -104,7 +104,9 @@ DEPEND="
 
 # Build-time dependencies that are executed during the emerge process, and
 # only need to be present in the native build system (CBUILD). Example:
-#BDEPEND="virtual/pkgconfig"
+BDEPEND="
+	media-libs/shaderc
+"
 
 src_prepare() {
 	cmake_src_prepare
