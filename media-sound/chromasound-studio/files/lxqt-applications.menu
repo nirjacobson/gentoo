@@ -19,7 +19,7 @@
 		<Directory>chromasound.directory</Directory>
 		<Include>
 			<And>
-				<Category>Chromasound</Category>
+				<Category>X-Chromasound</Category>
 			</And>
 		</Include>
 	</Menu> <!-- End Chromasound -->
