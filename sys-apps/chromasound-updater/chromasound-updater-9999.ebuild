@@ -124,16 +124,4 @@ src_test() {
 
 src_install() {
 	cmake_src_install
-
-	if [ -f "/etc/xdg/menus/lxqt-applications.menu" ]; then
-                cp /etc/xdg/menus/lxqt-applications.menu /var/tmp/lxqt-applications.menu.backup
-                mkdir -p ${D}/etc/xdg/menus/
-                install ${FILESDIR}/lxqt-applications.menu ${D}/etc/xdg/menus/
-        fi
-}
-
-pkg_postrm() {
-        if [ -f "/var/tmp/lxqt-applications.menu.backup" ]; then
-                mv /var/tmp/lxqt-applications.menu.backup /etc/xdg/menus/lxqt-applications.menu
-        fi
 }
