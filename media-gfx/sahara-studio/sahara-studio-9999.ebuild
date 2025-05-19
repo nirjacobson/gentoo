@@ -99,7 +99,7 @@ RDEPEND=""
 # being built (CHOST). These include libraries that we link against.
 # The below is valid if the same run-time depends are required to compile.
 DEPEND="
-	vulkan ?
+	vulkan?
 		( >=dev-qt/qtbase-6.7.2[vulkan]
 		  media-libs/qcollada
 		  media-libs/sahara[vulkan] )
