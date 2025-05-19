@@ -118,8 +118,8 @@ src_prepare() {
 }
 
 src_configure() {
-	if use vulkan; then
-		cmake_append_value_args CMAKE_ variables "-DVULKAN_ENABLED=ON"
+	if not use vulkan; then
+		cmake_append_value_args CMAKE_ variables "-DVULKAN_ENABLED=OFF"
 	fi
 	cmake_src_configure
 }
