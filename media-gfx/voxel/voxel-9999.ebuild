@@ -32,6 +32,10 @@ HOMEPAGE="https://nirjacobson.com/graphics"
 # Portage.
 EGIT_REPO_URI="https://github.com/nirjacobson/Voxel.git"
 
+if ! use vulkan; then
+	EGIT_BRANCH="10-final-opengl"
+fi
+
 # Source directory; the dir where the sources can be found (automatically
 # unpacked) inside ${WORKDIR}.  The default value for S is ${WORKDIR}/${P}
 # If you don't need to change it, leave the S= line out of the ebuild
