@@ -99,14 +99,14 @@ RDEPEND=""
 # being built (CHOST). These include libraries that we link against.
 # The below is valid if the same run-time depends are required to compile.
 DEPEND="
-	vulkan? (>=dev-qt/qtbase-6.7.2[vulkan])
-	!vulkan? (>=dev-qt/qtbase-6.7.2)
+	vulkan? ( >=dev-qt/qtbase-6.7.2[vulkan] )
+	!vulkan? ( >=dev-qt/qtbase-6.7.2 )
 "
 
 # Build-time dependencies that are executed during the emerge process, and
 # only need to be present in the native build system (CBUILD). Example:
 BDEPEND="
-	vulkan? (media-libs/shaderc)
+	vulkan? ( media-libs/shaderc )
 "
 
 src_prepare() {
