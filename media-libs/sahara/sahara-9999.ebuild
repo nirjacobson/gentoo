@@ -114,8 +114,8 @@ src_prepare() {
 }
 
 src_configure() {
-	if ! [ use vulkan ]; then
-		cmake_append_args -DVULKAN_ENABLED=OFF
+	if ! use vulkan; then
+		EXTRA_CMAKE_ARGS="-DVULKAN_ENABLED=OFF"
 	fi
 	cmake_src_configure
 }
