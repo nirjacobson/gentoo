@@ -78,7 +78,7 @@ KEYWORDS="arm64"
 # Comprehensive list of any and all USE flags leveraged in the ebuild,
 # with some exceptions, e.g., ARCH specific flags like "amd64" or "ppc".
 # Not needed if the ebuild doesn't use any USE flags.
-IUSE=""
+IUSE="vulkan"
 
 # A space delimited list of portage features to restrict. man 5 ebuild
 # for details.  Usually not needed.
@@ -99,9 +99,14 @@ RDEPEND=""
 # being built (CHOST). These include libraries that we link against.
 # The below is valid if the same run-time depends are required to compile.
 DEPEND="
-	>=dev-qt/qtbase-6.7.2
-	media-libs/qcollada
-	media-libs/sahara
+	vulkan ?
+		( >=dev-qt/qtbase-6.7.2[vulkan]
+		  media-libs/qcollada
+		  media-libs/sahara[vulkan] )
+	!vulkan?
+		( >=dev-qt/qtbase-6.7.2
+                  media-libs/qcollada
+                  media-libs/sahara )
 "
 
 # Build-time dependencies that are executed during the emerge process, and
@@ -113,6 +118,9 @@ src_prepare() {
 }
 
 src_configure() {
+	if use vulkan; then
+		cmake_append_value_args CMAKE_ variables "-DVULKAN_ENABLED=ON"
+	fi
 	cmake_src_configure
 }
 
