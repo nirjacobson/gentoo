@@ -102,6 +102,7 @@ DEPEND="
 	>=dev-qt/qtbase-6.7.2
 	  media-libs/portaudio
 	  dev-libs/libsigc++
+	  dev-cpp/glibmm
 "
 
 # Build-time dependencies that are executed during the emerge process, and
