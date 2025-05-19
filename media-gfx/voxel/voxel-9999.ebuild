@@ -78,7 +78,7 @@ KEYWORDS="arm64"
 # Comprehensive list of any and all USE flags leveraged in the ebuild,
 # with some exceptions, e.g., ARCH specific flags like "amd64" or "ppc".
 # Not needed if the ebuild doesn't use any USE flags.
-IUSE=""
+IUSE="vulkan"
 
 # A space delimited list of portage features to restrict. man 5 ebuild
 # for details.  Usually not needed.
@@ -110,7 +110,7 @@ DEPEND="
 # Build-time dependencies that are executed during the emerge process, and
 # only need to be present in the native build system (CBUILD). Example:
 BDEPEND="
-        media-libs/shaderc
+        vulkan? (media-libs/shaderc)
 "
 
 src_prepare() {
@@ -118,6 +118,9 @@ src_prepare() {
 }
 
 src_configure() {
+	if not use vulkan; then
+		cmake_append_value_args CMAKE_ variables "-DVULKAN_ENABLED=OFF"
+	fi
 	cmake_src_configure
 }
 
