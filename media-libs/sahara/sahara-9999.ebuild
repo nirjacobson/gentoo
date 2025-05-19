@@ -115,9 +115,7 @@ src_prepare() {
 
 src_configure() {
 	if ! use vulkan; then
-		CMAKE_PARAMS+=(
-			-DVULKAN_ENABLED=OFF
-		)
+		CMAKE_VARIABLES="VULKAN_ENABLED=OFF"
 	fi
 	cmake_src_configure
 }
