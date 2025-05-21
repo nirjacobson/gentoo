@@ -93,14 +93,14 @@ IUSE=""
 # had installed on your system when you tested the package.  Then
 # other users hopefully won't be caught without the right version of
 # a dependency.
-RDEPEND=""
+RDEPEND="
+	>=dev-qt/qtbase-6.7.2
+"
 
 # Build-time dependencies that need to be binary compatible with the system
 # being built (CHOST). These include libraries that we link against.
 # The below is valid if the same run-time depends are required to compile.
-DEPEND="
-	>=dev-qt/qtbase-6.7.2
-"
+DEPEND=${RDEPEND}
 
 # Build-time dependencies that are executed during the emerge process, and
 # only need to be present in the native build system (CBUILD). Example:
