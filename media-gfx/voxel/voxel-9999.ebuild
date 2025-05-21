@@ -33,7 +33,7 @@ HOMEPAGE="https://nirjacobson.com/graphics"
 EGIT_REPO_URI="https://github.com/nirjacobson/Voxel.git"
 
 if [[ "$USE" =~ "vulkan" ]]; then
-	EGIT_BRANCH="10-final-opengl"
+	EGIT_OVERRIDE_BRANCH_NIRJACOBSON_VOXEL="10-final-opengl"
 fi
 
 # Source directory; the dir where the sources can be found (automatically
