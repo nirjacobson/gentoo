@@ -94,14 +94,13 @@ IUSE="vulkan"
 # other users hopefully won't be caught without the right version of
 # a dependency.
 RDEPEND="
+	media-libs/qcollada
 	vulkan?
 		( >=dev-qt/qtbase-6.7.2[vulkan]
-		  media-libs/qcollada
 		  media-libs/sahara[vulkan] )
 	!vulkan?
 		( >=dev-qt/qtbase-6.7.2
-                  media-libs/qcollada
-                  media-libs/sahara )
+            media-libs/sahara )
 "
 
 # Build-time dependencies that need to be binary compatible with the system

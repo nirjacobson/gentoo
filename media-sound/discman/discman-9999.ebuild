@@ -97,9 +97,12 @@ RDEPEND="
 	dev-cpp/curlpp
 	dev-cpp/glibmm
 	dev-cpp/gtkmm
+	dev-libs/cdio-paranoia
 	dev-libs/stb
 	dev-libs/jsoncpp
-	dev-libs/cdio-paranoia
+	dev-libs/libbluez
+	dev-libs/libdiscdb
+	dev-libs/libudisks2
 	media-libs/portaudio
 	media-sound/bluez-alsa
 "
