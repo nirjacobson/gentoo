@@ -97,7 +97,7 @@ RDEPEND="
 	dev-cpp/curlpp
 	dev-cpp/glibmm
 	dev-cpp/gtkmm
-	dev-libs/cdio-paranoia
+	dev-libs/libcdio-paranoia
 	dev-libs/stb
 	dev-libs/jsoncpp
 	dev-libs/libbluez
