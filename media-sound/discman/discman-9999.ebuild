@@ -17,7 +17,7 @@ EAPI=8
 # inherit lists eclasses to inherit functions from. For example, an ebuild
 # that needs the eautoreconf function from autotools.eclass won't work
 # without the following line:
-inherit cmake git-r3
+inherit git-r3
 #
 # Eclasses tend to list descriptions of how to use their functions properly.
 # Take a look at the eclass/ directory for more examples.
@@ -116,22 +116,10 @@ DEPEND=${RDEPEND}
 # only need to be present in the native build system (CBUILD). Example:
 #BDEPEND="virtual/pkgconfig"
 
-src_prepare() {
-	cmake_src_prepare
-}
-
-src_configure() {
-	cmake_src_configure
-}
-
 src_compile() {
-	cmake_src_compile
-}
-
-src_test() {
-	cmake_src_test
+	emake
 }
 
 src_install() {
-	cmake_src_install
+	emake DESTDIR="${D}" install
 }
