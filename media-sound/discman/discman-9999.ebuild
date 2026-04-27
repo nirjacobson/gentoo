@@ -105,6 +105,7 @@ RDEPEND="
 	dev-libs/libudisks2
 	media-libs/portaudio
 	media-sound/bluez-alsa
+	media-video/ffmpeg
 "
 
 # Build-time dependencies that need to be binary compatible with the system
