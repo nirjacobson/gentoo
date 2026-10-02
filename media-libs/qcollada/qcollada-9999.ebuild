@@ -128,5 +128,4 @@ src_install() {
 	insinto /usr/include/${PN}
 
 	doins -r "${S}"/*.h
-	doins -r "${S}"/*.hpp
 }
