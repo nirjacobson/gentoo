@@ -125,8 +125,14 @@ src_test() {
 src_install() {
 	cmake_src_install
 
-	insinto /usr/include/QCollada
-	shopt -s globstar
-	doins --parents "${S}"/**/*.h
-	shopt -u globstar
+	cd "${S}"
+
+	for y in `find . -name '*.h'`; do
+		path=${y#./}
+		filename=$(basename "$y")
+		path=${path%filename}
+
+		insinto "/usr/include/QCollada/$path"
+		doins "$y"
+	done
 }
