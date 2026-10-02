@@ -125,7 +125,9 @@ src_test() {
 src_install() {
 	cmake_src_install
 
-	insinto /usr/include/${PN}
+	insinto /usr/include/QCollada
 
-	doins -r "${S}"/*.h
+	for y in `find "${S}" -name '*.h'`; do
+		doins "$y"
+	done
 }
