@@ -126,8 +126,7 @@ src_install() {
 	cmake_src_install
 
 	insinto /usr/include/QCollada
-
-	for y in `find "${S}" -name '*.h'`; do
-		doins "$y"
-	done
+	shopt -s globstar
+	doins --parents "${S}"/**/*.h
+	shopt -u globstar
 }
