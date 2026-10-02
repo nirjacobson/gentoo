@@ -124,4 +124,8 @@ src_test() {
 
 src_install() {
 	cmake_src_install
+
+	insinto /usr/include/${PN}
+
+	doins -r "${S}"/*.h "${S}"/*.hpp
 }
