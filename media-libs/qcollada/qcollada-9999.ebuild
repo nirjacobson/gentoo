@@ -130,7 +130,7 @@ src_install() {
 	for y in `find . -name '*.h'`; do
 		path=${y#./}
 		filename=$(basename "$y")
-		path=${path%filename}
+		path=${path%"$filename"}
 
 		insinto "/usr/include/QCollada/$path"
 		doins "$y"
