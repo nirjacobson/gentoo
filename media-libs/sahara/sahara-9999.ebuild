@@ -130,4 +130,15 @@ src_test() {
 
 src_install() {
 	cmake_src_install
+
+	cd "${S}"
+
+        for y in `find . -name '*.h'`; do
+                path=${y#./}
+                filename=$(basename "$y")
+                path=${path%"$filename"}
+
+                insinto "/usr/include/Sahara/$path"
+                doins "$y"
+        done
 }
